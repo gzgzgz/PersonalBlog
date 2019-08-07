@@ -11,7 +11,7 @@ namespace Projects.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=BlogDB.db");
+            optionsBuilder.UseSqlite($"Data Source=/app/BlogDB.db");
         }
 
         public DbSet<BlogsEntityModel> Blogs {get; set;}
