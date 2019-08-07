@@ -3,4 +3,4 @@
 
 - Typical MVC design. ASP.net core + SQLite
 - Basic CRUD on blog post
-- Formatted with markdown format, javascript library supported markdown editor
+- Formatted with markdown format, javascript library supported markdown editor; render in html page
