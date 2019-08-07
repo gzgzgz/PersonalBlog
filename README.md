@@ -1,5 +1,5 @@
 # PersonalBlog
-## A extremely lite personal blog for testing asp.net core 
+## An extremely lite personal blog for testing asp.net core 
 
 - Typical MVC design. ASP.net core + SQLite
 - Basic CRUD on blog post
