@@ -1,0 +1,57 @@
+﻿@model BlogViewModel
+
+
+<form method="post">
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" size="100"/>
+    </div>
+    <div id="myPar">
+        <textarea asp-for="Blog" id="myEditor" style="display:none;"></textarea>
+    </div>
+
+    <div>
+        <label asp-for="Permission"></label>
+        <select asp-for="Permission">
+            @for(int i=0;i<3; ++i)
+            {
+                <option>@i</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <input asp-for="BlogHtml" id="hiddenHtmlInput" style="display:none"/>
+    </div>
+
+    <button type="submit">存盘</button>
+</form>
+
+@section Scripts 
+{
+    <script>
+        var editor;
+        $(document).ready(function() {
+            editor = editormd("myPar", {
+                height : 740,
+                path   : "/editormd/lib/",
+                saveHTMLToTextarea: true,
+                htmlDecode : "style,script,iframe|on*", 
+                imageUpload : true,
+                flowChart: true,
+                tex: true,
+                sequenceDiagram: true
+            });
+
+            $("form").submit(function(event) {
+                $("#hiddenHtmlInput")[0].value = editor.getHTML();
+                return true;
+            });
+
+        });
+
+
+
+    </script>
+
+}

@@ -1,0 +1,30 @@
+<div>
+    @Html.Raw(@ViewData["article"])
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function() {
+            var editMenu = document.createElement("li");
+            var editHyperLink = document.createElement("a"); 
+            editMenu.className = "nav-item";
+            editHyperLink.className = "nav-link text-dark";
+            editHyperLink.text = "编辑";
+            editHyperLink.href = "/Home/Edit/" + @ViewData["articleID"];
+            editMenu.append(editHyperLink);
+            $("#allMenus:first")[0].append(editMenu)
+
+
+            var deleteMenu = document.createElement("li");
+            var deleteHyperLink = document.createElement("a");
+            deleteMenu.className = "nav-item";
+            deleteHyperLink.className = "nav-link text-dark";
+            deleteHyperLink.text = "删除";
+            deleteHyperLink.href = "/Home/Delete/" + @ViewData["articleID"];
+            deleteMenu.append(deleteHyperLink);
+            $("#allMenus:first")[0].append(deleteMenu);
+        })
+    </script>
+
+}

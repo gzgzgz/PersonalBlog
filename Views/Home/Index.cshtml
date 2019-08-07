@@ -1,0 +1,12 @@
+﻿@model AllBlogList
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @foreach(var eachPost in Model.allRecords) {
+        <p>
+            <a asp-action="GetArticle" asp-route-id="@eachPost.Id">[@eachPost.PostDate] @eachPost.Title</a>
+        </p>
+    }
+</div>
