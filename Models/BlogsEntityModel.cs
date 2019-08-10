@@ -8,6 +8,7 @@ namespace Projects.Models
     public class BlogsEntityModel
     {
         [Key, Column("blogid")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BlogID {get; set;}
 
         [Required, Column("title")]
