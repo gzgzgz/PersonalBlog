@@ -50,7 +50,7 @@
 
             $("form").submit(function(event) {
                 event.preventDefault();
-                $("#hiddenHitmlInput")[0].value = $(".editormd-preview-container")[0].innerHTML;
+                $("#hiddenHitmlInput")[0].value = document.getElementsByClassName("editormd-preview-container")[0].innerHTML;
                 console.log($("#hiddenHitmlInput")[0].value);
             });
 
