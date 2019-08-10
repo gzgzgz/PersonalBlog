@@ -49,10 +49,8 @@
             });
 
             $("form").submit(function(event) {
-                var ss = document.getElementsByClassName("editormd-preview-container")[0].innerHTML;
-                console.log(ss);
-                $("#hiddenHitmlInput")[0].value = ss;
-                return true
+                event.preventDefault();
+                $("#hiddenHitmlInput")[0].value = $(".editormd-preview-container")[0].innerHTML;
             });
 
         });
