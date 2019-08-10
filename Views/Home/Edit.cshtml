@@ -49,7 +49,8 @@
             });
 
             $("form").submit(function(event) {
-                $("#hiddenHitmlInput")[0].value = document.getElementsByClassName("editormd-preview-container")[0].innerHTML.toString();
+                var ss = document.getElementsByClassName("editormd-preview-container")[0].innerHTML;
+                $("#hiddenHitmlInput")[0].value = ss;
                 console.log($("#hiddenHitmlInput")[0].value);
                 return true
             });
