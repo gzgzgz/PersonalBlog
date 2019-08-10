@@ -4,12 +4,9 @@
 }
 
 <div class="text-center">
-    <ul style="margin:0;padding:0;">
         @foreach(var eachPost in Model.allRecords) {
-            <li>
+            <p>
                 <a asp-action="GetArticle" asp-route-id="@eachPost.Id">[@eachPost.PostDate] @eachPost.Title</a>
-            </li>
+            </p>
         }
-    </ul>
-
 </div>
