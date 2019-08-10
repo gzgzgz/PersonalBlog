@@ -28,10 +28,11 @@ namespace Projects.Controllers
         public IActionResult GetArticle(int id)
         {
             var db = new BlogDBContext(new DbContextOptions<BlogDBContext>());
-            var (articleTitle, article) = db.Blogs.Where(x => x.BlogID==id).Select(x => Tuple.Create(x.Title, x.BlogHtml)).FirstOrDefault();
+            var (articleTitle, article, postTime) = db.Blogs.Where(x => x.BlogID==id).Select(x => Tuple.Create(x.Title, x.BlogHtml, x.PostDate)).FirstOrDefault();
             ViewData["article"] = article;
             ViewData["articleID"] = id;
             ViewData["articleTitle"] = articleTitle;
+            ViewData["articlePostDate"] = postTime;
             return View();
         }
 
