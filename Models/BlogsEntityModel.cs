@@ -7,8 +7,7 @@ namespace Projects.Models
     [Table("blogs")]
     public class BlogsEntityModel
     {
-        [Key, Column("blogid")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Column("blogid")]
         public int BlogID {get; set;}
 
         [Required, Column("title")]
