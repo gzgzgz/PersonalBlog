@@ -49,7 +49,7 @@
             });
 
             $("form").submit(function(event) {
-                $("#hiddenHtmlInput")[0].value = editor.getHTML();
+                $("#hiddenHitmlInput")[0].value = $(".editormd-preview-container")[0].innerHTML;
                 return true;
             });
 
