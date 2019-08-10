@@ -45,6 +45,7 @@
 
             $("form").submit(function(event) {
                 $("#hiddenHitmlInput")[0].value = $(".editormd-preview-container")[0].innerHTML;
+                console.log($("#hiddenHitmlInput")[0].value );
                 return true;
             });
 
