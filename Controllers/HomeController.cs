@@ -53,8 +53,7 @@ namespace Projects.Controllers
             var db = new BlogDBContext(new DbContextOptions<BlogDBContext>());
             var selectedPost = db.Blogs.Where(x => x.BlogID == id).FirstOrDefault();
             db.Blogs.Remove(selectedPost);
-            // db.SaveChangesAsync();
-            db.SaveChanges();
+            db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
@@ -69,8 +68,7 @@ namespace Projects.Controllers
                 articleInEdit.Permission = editPost.Permission;
                 articleInEdit.Title = editPost.Title;
             }
-            // db.SaveChangesAsync();
-            db.SaveChanges();
+            db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
@@ -92,8 +90,7 @@ namespace Projects.Controllers
                 BlogHtml = newPost.BlogHtml,
                 Permission = newPost.Permission
             });
-            // db.SaveChangesAsync();
-            db.SaveChanges();
+            db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 
