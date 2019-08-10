@@ -7,20 +7,21 @@ namespace Projects.Models
     [Table("blogs")]
     public class BlogsEntityModel
     {
-        [Key]
+        [Key, Column("blogid")]
         public int BlogID {get; set;}
 
-        [Required]
+        [Required, Column("title")]
         public string Title {get; set;}
 
-        [DataType(DataType.Date), Required]
+        [DataType(DataType.Date), Required, Column("postdate")]
         public DateTime PostDate {get; set;}
 
+        [Column("blog")]
         public string Blog {get; set;}
-
+        [Column("bloghtml")]
         public string BlogHtml {get; set;}
 
-        [Range(0,3),Required]
+        [Range(0,3),Required,Column("permission")]
         public int Permission {get; set;}
     }
 }
