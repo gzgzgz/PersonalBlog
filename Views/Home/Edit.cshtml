@@ -49,9 +49,9 @@
             });
 
             $("form").submit(function(event) {
-                event.preventDefault();
-                $("#hiddenHitmlInput")[0].value = document.getElementsByClassName("editormd-preview-container")[0].innerHTML;
+                $("#hiddenHitmlInput")[0].value = document.getElementsByClassName("editormd-preview-container")[0].innerHTML.toString();
                 console.log($("#hiddenHitmlInput")[0].value);
+                return true
             });
 
         });
